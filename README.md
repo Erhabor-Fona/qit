@@ -66,3 +66,77 @@ Create a qit.config.json file in your project root to customize the target branc
 - If no config file exists, Qit pushes to main branch
 - All changes are staged using git add .
 - Changes are pushed to origin remote
+
+## Features
+
+### Core Features
+
+- **Single Command Operation**: Execute multiple git commands with one command
+- **Configurable Branch**: Push to your preferred branch using config file
+- **Smart Defaults**: Works out of the box with sensible defaults
+- **Clear Feedback**: Colorful terminal output shows operation progress
+
+### Terminal Output
+
+- Stage changes: Blue indicators
+- Commit progress: Yellow indicators
+- Push status: Magenta indicators
+- Success messages: Green indicators
+- Error messages: Red indicators with clear descriptions
+
+## Requirements
+
+### System Requirements
+
+- Node.js 14 or higher
+- Git installed and configured
+- Active internet connection for pushing
+- A git repository initialized with a remote
+
+### Repository Requirements
+
+- Initialized git repository
+- Configured remote repository
+- Valid git credentials
+
+## Error Handling
+
+Qit provides clear error messages for common issues:
+
+### Common Errors
+
+- No Commit Message
+
+```bash
+✗ Error: Please provide a commit message
+Usage: qit <commit message>
+```
+
+- git operation failure
+
+```bash
+ERROR
+✗ Git operation failed: [error details]
+```
+
+### Error Prevention
+
+- Always include a commit message
+- Ensure you have internet connection before pushing
+- Check that your git credentials are configured
+- Verify that your repository has a remote configured
+
+### Dependencies
+
+- execa: Modern subprocess handling
+- ansi-colors: Terminal styling
+- fs & path: File system operations
+
+## Contributing
+
+### Getting Started
+
+1.  Fork the repository
+2.  Create a feature branch
+3.  Make your changes
+4.  Submit a pull request
