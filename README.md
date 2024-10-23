@@ -24,7 +24,9 @@ npm link
 
 To quickly stage, commit and push your changes, use:
 
-`qit "your commit message"`
+```bash
+qit "your commit message"
+```
 
 The command above will:
 
@@ -34,7 +36,8 @@ The command above will:
 
 ### Examples
 
-`# Fix a bug
+```bash
+# Fix a bug
 qit "fixed navigation menu bug"
 
 # Add new feature
@@ -43,7 +46,8 @@ qit "added dark mode support"
 
 # Update documentation
 
-qit "updated installation docs"`
+qit "updated installation docs"
+```
 
 ## Configuration
 
