@@ -55,6 +55,12 @@ qit "updated installation docs"
 
 Create a qit.config.json file in your project root to customize the target branch:
 
+```bash
+{
+    "branch": "develop"
+}
+```
+
 ## Default Settings
 
 - If no config file exists, Qit pushes to main branch
