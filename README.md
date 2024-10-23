@@ -24,7 +24,7 @@ npm link
 
 To quickly stage, commit and push your changes, use:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`  bashCopyqit "your commit message"  `
+`qit "your commit message"`
 
 The command above will:
 
@@ -34,15 +34,22 @@ The command above will:
 
 ### Examples
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`  bashCopy# Fix a bug  qit "fixed navigation menu bug"  # Add new feature  qit "added dark mode support"  # Update documentation  qit "updated installation docs"  `
+`# Fix a bug
+qit "fixed navigation menu bug"
+
+# Add new feature
+
+qit "added dark mode support"
+
+# Update documentation
+
+qit "updated installation docs"`
 
 ## Configuration
 
 ### Branch Configuration
 
 Create a qit.config.json file in your project root to customize the target branch:
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`  jsonCopy{      "branch": "develop"  }  `
 
 ## Default Settings
 
