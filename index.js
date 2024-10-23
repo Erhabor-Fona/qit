@@ -52,7 +52,7 @@ async function gitPush(commitMessage, branch) {
     console.log("🚀 Pushing to remote...");
     await execa("git", ["push", "origin", branch]);
 
-    console.log("✅ All done!");
+    console.log("✅ All done");
   } catch (error) {
     console.error("❌ Error:", error.message);
     process.exit(1);
