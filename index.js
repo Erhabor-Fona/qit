@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import { execa } from "execa";
 import { fileURLToPath } from "url";
-import chalk from "chalk";
+import colors from "ansi-colors";
 
 // Get current directory (needed for ESM)
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -42,34 +42,31 @@ function getCommitMessage() {
 async function gitPush(commitMessage, branch) {
   try {
     // Stage changes
-    console.log(chalk.blue("📦 Staging changes..."));
+    console.log(colors.blue("→ Staging changes..."));
     await execa("git", ["add", "."]);
 
     // Commit with message
     console.log(
-      chalk.yellow("💾 Committing:"),
-      chalk.white.bold(commitMessage)
+      colors.yellow("→ Committing: ") + colors.white.bold(commitMessage)
     );
     await execa("git", ["commit", "-m", commitMessage]);
 
     // Push to remote
     console.log(
-      chalk.magenta("🚀 Pushing to:"),
-      chalk.white.bold(`origin/${branch}`)
+      colors.magenta("→ Pushing to: ") + colors.white.bold(`origin/${branch}`)
     );
     await execa("git", ["push", "origin", branch]);
 
-    console.log(chalk.green("✅ Successfully pushed to remote!"));
+    console.log(colors.green("✓ Successfully pushed to remote!"));
 
     // Show success summary
-    console.log("\n" + chalk.bgGreen.black(" SUMMARY "));
-    console.log(chalk.green("• Branch:"), chalk.white.bold(branch));
-    console.log(chalk.green("• Commit:"), chalk.white.bold(commitMessage));
+    console.log("\n" + colors.black.bgGreen(" SUMMARY "));
+    console.log(colors.green("• Branch: ") + colors.white.bold(branch));
+    console.log(colors.green("• Commit: ") + colors.white.bold(commitMessage));
   } catch (error) {
-    console.error("\n" + chalk.bgRed.white(" ERROR "));
+    console.error("\n" + colors.white.bgRed(" ERROR "));
     console.error(
-      chalk.red("❌ Git operation failed:"),
-      chalk.white.bold(error.message)
+      colors.red("✗ Git operation failed: ") + colors.white.bold(error.message)
     );
     process.exit(1);
   }
@@ -80,13 +77,15 @@ const config = getConfig();
 const commitMessage = getCommitMessage();
 
 if (!commitMessage) {
-  console.error(chalk.red("❌ Error: Please provide a commit message"));
-  console.log(chalk.yellow("Usage:"), chalk.white.bold("qit <commit message>"));
+  console.error(colors.red("✗ Error: Please provide a commit message"));
+  console.log(
+    colors.yellow("Usage: ") + colors.white.bold("qit <commit message>")
+  );
   process.exit(1); // Exit with error code
 }
 
 // Since we're using async/await, we need to wrap our execution
 gitPush(commitMessage, config.branch).catch((error) => {
-  console.error(chalk.red("❌ Unexpected error:"), chalk.white.bold(error));
+  console.error(colors.red("✗ Unexpected error: ") + colors.white.bold(error));
   process.exit(1);
 });
