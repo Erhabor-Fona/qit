@@ -1,0 +1,17 @@
+{
+  "name": "qit",
+  "version": "1.0.0",
+  "description": "Quick git add, commit, and push with one command",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "git",
+    "cli",
+    "productivity",
+    "automation"
+  ],
+  "author": "Prime",
+  "license": "MIT"
+}
