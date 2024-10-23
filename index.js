@@ -20,5 +20,26 @@ function getConfig() {
   }
 }
 
+// Get the commit message from command line arguments
+function getCommitMessage() {
+  // process.argv is an array containing command line arguments
+  // [0] = node executable path
+  // [1] = script path
+  // [2] and onwards = actual arguments we want
+  const args = process.argv.slice(2);
+
+  // Join all arguments into a single message
+  // This allows messages with spaces like "fixed screen size"
+  return args.join(" ");
+}
+
 const config = getConfig();
-console.log(`Current branch: ${config.branch}`);
+const commitMessage = getCommitMessage();
+
+if (!commitMessage) {
+  console.log("Error: Please provide a commit message");
+  console.log("Usage: qit <commit message>");
+  process.exit(1); // Exit with error code
+}
+
+console.log(`Pushing "${commitMessage}" to ${config.branch}`);
