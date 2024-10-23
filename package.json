@@ -6,6 +6,7 @@
   "bin": {
     "qit": "./index.js"
   },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +17,9 @@
     "automation"
   ],
   "author": "Prime",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "execa": "^9.4.1"
+  }
 }

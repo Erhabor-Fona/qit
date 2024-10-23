@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 
-console.log("Program started");
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import { execa } from "execa";
+import { fileURLToPath } from "url";
+
+// Get current directory (needed for ESM)
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function getConfig() {
   try {
@@ -33,6 +37,29 @@ function getCommitMessage() {
   return args.join(" ");
 }
 
+// New function to handle git operations
+async function gitPush(commitMessage, branch) {
+  try {
+    // Stage changes
+    console.log("📦 Staging changes...");
+    await execa("git", ["add", "."]);
+
+    // Commit with message
+    console.log("💾 Committing changes...");
+    await execa("git", ["commit", "-m", commitMessage]);
+
+    // Push to remote
+    console.log("🚀 Pushing to remote...");
+    await execa("git", ["push", "origin", branch]);
+
+    console.log("✅ All done!");
+  } catch (error) {
+    console.error("❌ Error:", error.message);
+    process.exit(1);
+  }
+}
+
+// Main execution
 const config = getConfig();
 const commitMessage = getCommitMessage();
 
@@ -42,4 +69,8 @@ if (!commitMessage) {
   process.exit(1); // Exit with error code
 }
 
-console.log(`Pushing "${commitMessage}" to ${config.branch}`);
+// Since we're using async/await, we need to wrap our execution
+gitPush(commitMessage, config.branch).catch((error) => {
+  console.error("❌ Unexpected error:", error);
+  process.exit(1);
+});
