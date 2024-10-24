@@ -8,6 +8,7 @@ import colors from "ansi-colors";
 console.log("program started");
 // Get current directory (needed for ESM)
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const LAST_COMMIT_FILE = path.join(__dirname, ".last_commit");
 
 function getConfig() {
   try {
