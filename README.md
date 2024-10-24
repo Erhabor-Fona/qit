@@ -65,6 +65,20 @@ qit "added dark mode support"
 qit "updated installation docs"
 ```
 
+### Handling Failed Pushes
+
+If a push fails (e.g., due to no internet connection), the changes will be committed locally but remain unpushed. When your internet connection is restored, you can try pushing again using:
+
+```bash
+qit p
+```
+
+This will run:
+
+```bash
+git push origin <branch>
+```
+
 ## Configuration
 
 ### Branch Configuration
