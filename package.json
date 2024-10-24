@@ -4,7 +4,7 @@
   "description": "A CLI tool to automate git commands. Quick git add, commit, and push with one command",
   "main": "index.js",
   "bin": {
-    "qit": "./index.js"
+    "qit": "index.js"
   },
   "type": "module",
   "scripts": {
@@ -25,6 +25,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/prime-infinity/qit.git"
+    "url": "git+https://github.com/prime-infinity/qit.git"
   }
 }
