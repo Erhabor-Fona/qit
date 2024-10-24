@@ -4,18 +4,34 @@ A simple CLI tool to automate your git workflow. Qit combines the three most com
 
 ## Installation
 
+### Global Installation(preferred)
+
+To install the qit-cli globally so it can be used anywhere on your system:
+
 ```bash
-# Clone the repository
-git clone [your-repo-url]
+npm install -g qit-cli
+```
 
-# Navigate to the project directory
-cd qit
+### Local Installation
 
-# Install dependencies
-npm install
+If you prefer to install it locally in a specific project folder:
 
-# Link the package globally
-npm link
+```bash
+npm install qit-cli
+```
+
+To run it locally, use npx in your project folder:
+
+```bash
+npx qit "Your commit message"
+
+```
+
+If installed glabally, just use qit in your project folder:
+
+```bash
+qit "Your commit message"
+
 ```
 
 ## Usage
