@@ -76,6 +76,17 @@ async function gitPush(commitMessage, branch) {
 const config = getConfig();
 const commitMessage = getCommitMessage();
 
+// Check if the command is `qit p` to retry the push
+if (process.argv[2] === "p") {
+  /*const lastCommit = loadLastCommitHash();
+  if (!lastCommit) {
+    console.log(colors.red("✗ No previous commit to push."));
+    process.exit(1);
+  } else {
+    pushOnly(config.branch);
+  }*/
+}
+
 if (!commitMessage) {
   console.error(colors.red("✗ Error: Please provide a commit message"));
   console.log(
