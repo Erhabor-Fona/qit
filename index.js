@@ -78,6 +78,7 @@ const commitMessage = getCommitMessage();
 
 // Check if the command is `qit p` to retry the push
 if (process.argv[2] === "p") {
+  console.log("in p");
   /*const lastCommit = loadLastCommitHash();
   if (!lastCommit) {
     console.log(colors.red("✗ No previous commit to push."));
