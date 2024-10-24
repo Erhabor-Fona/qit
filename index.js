@@ -95,7 +95,6 @@ async function gitPush(commitMessage, branch) {
     console.log("\n" + colors.black.bgGreen(" SUMMARY "));
     console.log(colors.green("• Branch: ") + colors.white.bold(branch));
     console.log(colors.green("• Commit: ") + colors.white.bold(commitMessage));
-    await saveLastCommitHash();
   } catch (error) {
     console.error("\n" + colors.white.bgRed(" ERROR "));
     console.error(
