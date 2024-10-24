@@ -1,5 +1,5 @@
 {
-  "name": "qit",
+  "name": "qit-cli",
   "version": "1.0.0",
   "description": "A CLI tool to automate git commands. Quick git add, commit, and push with one command",
   "main": "index.js",
