@@ -5,7 +5,7 @@ import path from "path";
 import { execa } from "execa";
 import { fileURLToPath } from "url";
 import colors from "ansi-colors";
-
+console.log("program started");
 // Get current directory (needed for ESM)
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
